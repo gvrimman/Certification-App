@@ -42,7 +42,7 @@ This is to certify that <span class="font-bold">${name}</span> has worked with o
 <span class="font-bold">${formattedStartDate}</span> to <span class="font-bold">${formattedEndDate}</span> as a <span class="font-bold">${position} ${role} ${
     role === "Python" ? "Full" : ""
   } Stack Developer</span> 
-over a period of <span class="font-bold">${durationText}</span>.
+over a period of ${`<span class="font-bold">${durationText}</span>`}.
 
 During ${
     gender === "male" ? "his" : "her"
@@ -71,16 +71,18 @@ Learnbuds
 
   const internCont = `
    ${
-    type === "masterClass"
-      ? `<span class="text-2xl bg-red-400 mb-20 ml-35">ADVANCED TRAINING CERTIFICATE</span>`
-      : `<span class="text-2xl bg-red-400 mb-20 ml-60">CERTIFICATE OF INTERNSHIP</span>`
-  }
+     type === "masterClass"
+       ? `<span class="text-2xl bg-red-400 mb-20 ml-35">ADVANCED TRAINING CERTIFICATE</span>`
+       : `<span class="text-2xl bg-red-400 mb-20 ml-60">CERTIFICATE OF INTERNSHIP</span>`
+   }
 
 This is to certify that <span class="font-bold">${name}</span> has successfully completed ${
     gender === "male" ? "his" : "her"
-  } <span class="font-bold">${
-    type === "masterClass" ? "45 days" : durationText
-  }</span> 
+  } ${
+    type === "masterClass"
+      ? `<span class="font-bold">45 days</span>`
+      : `<span class="font-bold">${durationText}</span>`
+  } 
 ${
   type === "masterClass" ? "advance training" : ""
 } as a <span class="font-bold">${role} ${
