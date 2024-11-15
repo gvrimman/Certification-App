@@ -6,7 +6,8 @@ function ExperienceForm() {
   const [formData, setFormData] = useState({
     name: "",
     role: "Python",
-    position: "Jr Developer",
+    position: "Jr",
+    type: "experience",
     startDate: "",
     endDate: "",
     gender: "male",
@@ -59,8 +60,18 @@ function ExperienceForm() {
             onChange={(value) => handleSelectChange("position", value)}
             required
           >
-            <Option value="Jr Developer">Jr Developer</Option>
-            <Option value="Intern">Intern</Option>
+            <Option value="Jr">Jr</Option>
+          </Select>
+
+          <Select
+            label="Type"
+            value={formData.type}
+            onChange={(value) => handleSelectChange("type", value)}
+            required
+          >
+            <Option value="experience">Experience</Option>
+            <Option value="intern">Intern</Option>
+            <Option value="masterClass">Master Class</Option>
           </Select>
 
           <Input
@@ -98,6 +109,7 @@ function ExperienceForm() {
               onChange={handleChange}
             />
           </div>
+          
 
           <Button type="submit" className="w-full">
             Generate PDF

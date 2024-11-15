@@ -4,7 +4,7 @@ import LoginForm from "./components/LoginForm";
 import ExperienceForm from "./components/CertificationForm";
 
 const App = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
 
   return (
     <Routes>
