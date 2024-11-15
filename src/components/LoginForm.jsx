@@ -11,8 +11,8 @@ const LoginForm = ({ setIsAuthenticated }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const hardcodedUsername = import.meta.env.VITE_USERNAME;
-    const hardcodedPassword = import.meta.env.VITE_USERNAME_PASSWORD;
+    const hardcodedUsername = "AdminLearnBuds";
+    const hardcodedPassword = "1@3!%2";
 
     if (username === hardcodedUsername && password === hardcodedPassword) {
       setIsAuthenticated(true);
