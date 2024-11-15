@@ -113,10 +113,6 @@ Immanuel Varghese
 MD & CEO
 Learnbuds
   `;
-
-  //   const masterClassCont = `
-  //    <span class="text-2xl bg-red-400 mb-20 ml-60">ADVANCED TRAINING COMPLETION CERTIFICATE</span>
-
   // This is to certify that <span class="font-bold">${name}</span> has successfully completed ${
   //     gender === "male" ? "his" : "her"
   //   } <span class="font-bold">45 days</span>
