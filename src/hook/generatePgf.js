@@ -38,9 +38,8 @@ export async function generatePDF(data) {
   const experienceCont = `
     <span class="text-2xl bg-red-400 mb-20 ml-60">CERTIFICATE OF EXPERIENCE</span>
 
-This is to certify that <span class="font-bold">${name}</span> has worked with our <span class="font-bold">Learnbuds</span> ${
-    name.length >= 15 ? "\n" : ""
-  } from <span class="font-bold">${formattedStartDate}</span> to <span class="font-bold">${formattedEndDate}</span> as a <span class="font-bold">${position} ${role} ${
+This is to certify that <span class="font-bold">${name}</span> has worked with our <span class="font-bold">Learnbuds</span>
+ from <span class="font-bold">${formattedStartDate}</span> to <span class="font-bold">${formattedEndDate}</span> as a <span class="font-bold">${position} ${role} ${
     role === "Python" ? "Full" : ""
   } Stack Developer</span> 
 over a period of ${`<span class="font-bold">${durationText}</span>`}.
