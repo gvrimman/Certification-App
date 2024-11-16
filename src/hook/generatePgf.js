@@ -38,8 +38,9 @@ export async function generatePDF(data) {
   const experienceCont = `
     <span class="text-2xl bg-red-400 mb-20 ml-60">CERTIFICATE OF EXPERIENCE</span>
 
-This is to certify that <span class="font-bold">${name}</span> has worked with our <span class="font-bold">Learnbuds</span> from
-<span class="font-bold">${formattedStartDate}</span> to <span class="font-bold">${formattedEndDate}</span> as a <span class="font-bold">${position} ${role} ${
+This is to certify that <span class="font-bold">${name}</span> has worked with our <span class="font-bold">Learnbuds</span> ${
+    name.length >= 15 ? "\n" : ""
+  } from <span class="font-bold">${formattedStartDate}</span> to <span class="font-bold">${formattedEndDate}</span> as a <span class="font-bold">${position} ${role} ${
     role === "Python" ? "Full" : ""
   } Stack Developer</span> 
 over a period of ${`<span class="font-bold">${durationText}</span>`}.
@@ -85,9 +86,9 @@ This is to certify that <span class="font-bold">${name}</span> has successfully 
   } 
 ${
   type === "masterClass" ? "advance training" : ""
-} as a <span class="font-bold">${role} ${
+} as <span class="font-bold">${role} ${
     role === "Python" ? "Full" : ""
-  } Stack Developer Intern</span> with <span class="font-bold">Learnbuds</span>. 
+  } Stack Developer</span> at <span class="font-bold">Learnbuds</span>. 
   The duration of internship was from <span class="font-bold">${formattedStartDate}</span> to <span class="font-bold">${formattedEndDate}</span>  .
 
 During ${
@@ -115,44 +116,11 @@ Immanuel Varghese
 MD & CEO
 Learnbuds
   `;
-  // This is to certify that <span class="font-bold">${name}</span> has successfully completed ${
-  //     gender === "male" ? "his" : "her"
-  //   } <span class="font-bold">45 days</span>
-  // advance training as a <span class="font-bold">${role} ${
-  //     role === "Python" ? "Full" : ""
-  //   } Stack Developer Intern</span> with <span class="font-bold">Learnbuds</span>. The duration
-  //   of internship was from <span class="font-bold">${formattedStartDate}</span> to <span class="font-bold">${formattedEndDate}</span>  .
-
-  // During ${
-  //     gender === "male" ? "his" : "her"
-  //   } tenure with us, <span class="font-bold">${name}</span> was actively involved in a live project,
-  // showcasing technical skills and dedication in real-world project
-  // development. ${
-  //     gender === "male" ? "He" : "She"
-  //   } has also demonstrated expertise in developing,
-  // designing, and deploying web applications, ${
-  //     role === "Python"
-  //       ? `using Python as the primary
-  //        backend language and a variety of frontend and database technologies.`
-  //       : `using the MERN Stack
-  // (MongoDB, Express.js, React.js, and Node.js).`
-  //   }
-
-  // <span class="font-bold">${name}</span> has consistently shown a high level of professionalism, dedication,
-  //  and commitment to work and contributed positively to our team.
-
-  //  We wish the candidate all the success in his future endeavours.
-
-  // Yours Sincerely,
-  // Immanuel Varghese
-  // MD & CEO
-  // Learnbuds
-  //   `;
 
   const content = type === "experience" ? experienceCont : internCont;
 
   const lines = content.split("\n").map((line) => line.trim());
-  let currentY = 650;
+  let currentY = 700;
 
   for (const line of lines) {
     const segments = parseSegments(line);
