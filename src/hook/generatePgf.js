@@ -108,7 +108,9 @@ designing, and deploying web applications, ${
 <span class="font-bold">${name}</span> has consistently shown a high level of professionalism, dedication,
  and commitment to work and contributed positively to our team.
 
- We wish the candidate all the success in his future endeavours.
+ We wish the candidate all the success in ${
+   gender === "male" ? "his" : "her"
+ } future endeavours.
 
 Yours Sincerely,
 Immanuel Varghese 
